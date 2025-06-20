@@ -13,10 +13,6 @@
       padding: 30px;
     }
     .container {
-      max-width: 700px;
-      width: 100%;
-      box-sizing: border-box;
-
       background: #111;
       padding: 30px;
       border-radius: 12px;
@@ -171,5 +167,22 @@ function nextQuestion() {
 
     loadQuestion();
   </script>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (isMobile) {
+    const question = document.getElementById("question");
+    if (question) {
+      question.style.fontSize = "24px"; // -1 step from desktop
+    }
+    const explanation = document.getElementById("explanation");
+    if (explanation) {
+      explanation.style.fontSize = "18px"; // -2 steps from desktop
+    }
+  }
+});
+</script>
+
 </body>
 </html>
